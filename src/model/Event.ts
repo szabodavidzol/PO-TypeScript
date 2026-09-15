@@ -8,6 +8,9 @@ export interface Event {
     date: Date;
     type: EventType;
     participants: Participant[];
+
+    addParticipant(participant: Participant): void;
+    removeParticipant(participantId: number): void;
 }
 
 export class EventImpl implements Event {
@@ -24,8 +27,8 @@ export class EventImpl implements Event {
     addParticipant(participant: Participant): void {
     this.participants.push(participant);
     }
-    removeParticipant(participant: Participant): void {
-        this.participants = this.participants.filter(p => p.id !== participant.id);
+    removeParticipant(participantId: number): void {
+        this.participants = this.participants.filter(p => p.id !== participantId);
     }
 
 }
