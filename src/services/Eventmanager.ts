@@ -1,11 +1,13 @@
 import { Event, EventImpl } from "../model/Event";
 import { EventType } from "../model/EventType";
 import { Participant } from "../model/Participant";
+import { LogMethod } from "../decorator/logEvent";
 
 export class EventManager {
     private events: Event[] = [];
     private nextId: number = 1;
 
+    //@LogMethod
     createEvent(
         name: string,
         location: string, 
